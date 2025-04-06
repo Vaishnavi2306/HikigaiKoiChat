@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">472164387884-6mvbqe52gefr6bodtot230eo5t9hdmkv.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">472164387884</string>
+    <string name="google_api_key" translatable="false">AIzaSyC0-5Iyrom4EVi4GWOX_KtIbwwgzkGVyQA</string>
+    <string name="google_app_id" translatable="false">1:472164387884:android:dcbed5444bb81c56c99589</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC0-5Iyrom4EVi4GWOX_KtIbwwgzkGVyQA</string>
+    <string name="google_storage_bucket" translatable="false">coastal-science-387603.firebasestorage.app</string>
+    <string name="project_id" translatable="false">coastal-science-387603</string>
+</resources>

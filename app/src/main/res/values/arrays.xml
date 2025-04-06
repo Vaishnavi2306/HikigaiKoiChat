@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="country_codes">
+        <item>🇮🇳 +91</item>
+        <item>🇺🇸 +1</item>
+    </string-array>
+</resources> 

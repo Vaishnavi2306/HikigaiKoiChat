@@ -1,0 +1,310 @@
+[
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/xml_backup_rules.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_info2.jpg.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/info2.jpg"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_person_circle.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_person_circle.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_dot_indicator_selected.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/dot_indicator_selected.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_info_card_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/info_card_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_logo512.png.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/logo512.png"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_dialog_info.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/dialog_info.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_dialog_feature_cards.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/dialog_feature_cards.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_item_feature_slide.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/item_feature_slide.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_koi_loading.gif.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/koi_loading.gif"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_card_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/card_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_quantum_leap_img.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/quantum_leap_img.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_button_logout_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/button_logout_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_activity_otp.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/activity_otp.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_gradient_card_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/gradient_card_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ambient_documentation_img.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ambient_documentation_img.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_item_feature_card.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/item_feature_card.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_dot_indicator_default.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/dot_indicator_default.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_hikigai_logo.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_hikigai_logo.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_india_flag.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_india_flag.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_button_lavender.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/button_lavender.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_activity_info.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/activity_info.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_close.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_close.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_info1.jpg.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/info1.jpg"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_dialog_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/dialog_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_item_info_slide.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/item_info_slide.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_thumb_up.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_thumb_up.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_koi_a.png.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/koi_a.png"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_info4.jpg.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/info4.jpg"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_activity_login.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_otp_box_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/otp_box_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_dialog_error.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/dialog_error.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_activity_home.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_item_example.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/item_example.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_chat.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_chat.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_activity_signup.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/activity_signup.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_semi_transparent_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/semi_transparent_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_activity_welcome.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/activity_welcome.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_rounded_white_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/rounded_white_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_arrow_back.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_arrow_back.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_button_cancel_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/button_cancel_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_button_accent.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/button_accent.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_screen_background_gradient.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/screen_background_gradient.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_gradient_mint_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/gradient_mint_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_button_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/button_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_usa_flag.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_usa_flag.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_rounded_white_bg.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/rounded_white_bg.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_button_danger_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/button_danger_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_spinner_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/spinner_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_ai_insights_card.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/ai_insights_card.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_info3.jpg.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/info3.jpg"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_thumb_down.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_thumb_down.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_send.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_send.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_edit_text_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/edit_text_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_activity_profile.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_gradient_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/gradient_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_dot_selected.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/dot_selected.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_hikigai_final_logo_png.png.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/hikigai_final_logo_png.png"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_banner_main_page.png.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/banner_main_page.png"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_item_diagnosis.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/layout/item_diagnosis.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_send.png.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/send.png"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_tab_selector.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/tab_selector.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_info_circle.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/ic_info_circle.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_button_secondary_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/button_secondary_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_dot_unselected.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/dot_unselected.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_tab_indicator_selected.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/tab_indicator_selected.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_feature_card_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/feature_card_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_rounded_white_transparent_bg.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/rounded_white_transparent_bg.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_billing_management_img.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/billing_management_img.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_rounded_button_bg.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/rounded_button_bg.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/xml_data_extraction_rules.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_tab_indicator_default.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/tab_indicator_default.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_button_primary_background.xml.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/button_primary_background.xml"
+    },
+    {
+        "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_logo192.png.flat",
+        "source": "com.hikigai.koichat.app-main-44:/drawable/logo192.png"
+    }
+]

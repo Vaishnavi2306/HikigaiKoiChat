@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "472164387884",
+    "project_id": "coastal-science-387603",
+    "storage_bucket": "coastal-science-387603.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472164387884:android:dcbed5444bb81c56c99589",
+        "android_client_info": {
+          "package_name": "com.hikigai.koichat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "472164387884-6mvbqe52gefr6bodtot230eo5t9hdmkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0-5Iyrom4EVi4GWOX_KtIbwwgzkGVyQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "472164387884-6mvbqe52gefr6bodtot230eo5t9hdmkv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "472164387884-2c72us6cr0qfmoqjcdr25nmmrch0ules.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.hikigaimobile"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472164387884:android:c666f99b69f9109cc99589",
+        "android_client_info": {
+          "package_name": "com.hikigaimobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "472164387884-vdser4o561u5jhrhk67oqakc0ji4jrlv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hikigaimobile",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "472164387884-6mvbqe52gefr6bodtot230eo5t9hdmkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0-5Iyrom4EVi4GWOX_KtIbwwgzkGVyQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "472164387884-6mvbqe52gefr6bodtot230eo5t9hdmkv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "472164387884-2c72us6cr0qfmoqjcdr25nmmrch0ules.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.hikigaimobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

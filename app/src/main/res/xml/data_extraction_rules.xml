@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- By default, all data is backed up to cloud -->
+        <include domain="root" path="."/>
+        <exclude domain="sharedpref" path="device.xml"/>
+    </cloud-backup>
+    <device-transfer>
+        <!-- By default, all data is allowed for device transfer -->
+        <include domain="root" path="."/>
+    </device-transfer>
+</data-extraction-rules> 

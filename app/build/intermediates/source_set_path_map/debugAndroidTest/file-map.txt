@@ -1,0 +1,6 @@
+com.hikigai.koichat.test.app-jetified-annotation-experimental-1.3.0-0 C:\Users\VAISH\.gradle\caches\transforms-3\d079508034ab27303029d3785e70dc93\transformed\jetified-annotation-experimental-1.3.0\res
+com.hikigai.koichat.test.app-jetified-core-1.5.0-1 C:\Users\VAISH\.gradle\caches\transforms-3\e85d32ac10e272dc8960d64017fb8106\transformed\jetified-core-1.5.0\res
+com.hikigai.koichat.test.app-androidTest-2 C:\Users\VAISH\AndroidStudioProjects\HikigaiKoiChat\app\build\generated\res\resValues\androidTest\debug
+com.hikigai.koichat.test.app-mergeDebugAndroidTestResources-3 C:\Users\VAISH\AndroidStudioProjects\HikigaiKoiChat\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.hikigai.koichat.test.app-mergeDebugAndroidTestResources-4 C:\Users\VAISH\AndroidStudioProjects\HikigaiKoiChat\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.hikigai.koichat.test.app-merged_res-5 C:\Users\VAISH\AndroidStudioProjects\HikigaiKoiChat\app\build\intermediates\merged_res\debugAndroidTest
