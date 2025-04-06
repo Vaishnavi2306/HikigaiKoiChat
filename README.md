@@ -1,152 +1,102 @@
-# Hikigai Koi Chat
+# HikigaiKoiChat
 
-A sophisticated AI-powered healthcare platform designed to assist medical professionals in providing better patient care. The application leverages advanced AI technology to enhance diagnosis, streamline workflows, and improve healthcare outcomes.
+An innovative healthcare chat application powered by AI, focusing on mental health support and medical assistance.
 
 ## Features
 
-### 1. AI-Powered Assistance
-- **Enhanced Diagnosis**: Assists doctors in making accurate, timely diagnoses by analyzing visit notes and medical history
-- **Personalized Insights**: Delivers tailored recommendations based on individual patient profiles
-- **Proactive Care**: Identifies missing lab tests or vaccinations, alerting doctors to ensure comprehensive care
-- **OCR Integration**: Extracts key details from prescriptions and lab reports automatically
-
-### 2. Core Functionalities
-- **Secure Authentication**: Phone number-based OTP verification system
-- **Profile Management**: Comprehensive doctor profile management
-- **Interactive UI**: Modern, intuitive interface with smooth transitions and animations
-- **Real-time Processing**: Quick response times for AI-powered features
-
-### 3. Technical Features
-- **Firebase Integration**: Authentication and data storage
-- **ViewPager2**: Smooth sliding cards for features and information
-- **Custom Dialogs**: Interactive feature cards and information displays
-- **Responsive Design**: Adapts to different screen sizes while maintaining functionality
-
-## Technical Requirements
-
-- Android Studio Arctic Fox or later
-- Minimum SDK: Android 21 (Lollipop)
-- Target SDK: Android 33
-- Kotlin version: 1.8.0
-- Gradle version: 7.4.0
-
-## Dependencies
-
-```gradle
-dependencies {
-    // Firebase
-    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.1'
-
-    // UI Components
-    implementation 'com.tbuonomo:dotsindicator:4.3'
-    implementation 'androidx.viewpager2:viewpager2:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-
-    // Kotlin Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4'
-}
-```
-
-## Installation Guide
-
-### Method 1: Install from APK
-1. **Download the APK**
-   - Visit the [Releases](https://github.com/yourusername/HikigaiKoiChat/releases) page
-   - Download the latest `HikigaiKoiChat.apk` file
-   
-2. **Enable Unknown Sources**
-   - Go to `Settings` > `Security` or `Privacy`
-   - Enable `Install from Unknown Sources` or `Install Unknown Apps`
-   - If prompted, allow your browser/file manager to install apps
-
-3. **Install the APK**
-   - Open the downloaded APK file
-   - Tap "Install" when prompted
-   - Wait for the installation to complete
-   - Tap "Open" to launch the app
-
-### Method 2: Build from Source
-1. **Prerequisites**
-   - Install [Android Studio](https://developer.android.com/studio)
-   - Install [Git](https://git-scm.com/downloads)
-   - Minimum 8GB RAM recommended
-   - At least 10GB free disk space
-
-2. **Clone and Setup**
-   ```bash
-   # Clone the repository
-   git clone https://github.com/yourusername/HikigaiKoiChat.git
-   cd HikigaiKoiChat
-
-   # Checkout the latest stable version
-   git checkout main
-   ```
-
-3. **Open in Android Studio**
-   - Launch Android Studio
-   - Select `File` > `Open`
-   - Navigate to the cloned repository
-   - Click `OK` to open the project
-   - Wait for Gradle sync to complete
-
-3. Configure Firebase:
-   - Create a new Firebase project
-   - Add your Android app to Firebase project
-   - Download `google-services.json` and place it in the app directory
-   - Enable Phone Authentication in Firebase Console
-
-5. **Build and Run**
-   - Connect an Android device or start an emulator
-   - Click the "Run" button (green play icon)
-   - Select your device/emulator
-   - Wait for the app to build and install
-
-### Minimum Requirements
-- Android 5.0 (Lollipop) or higher
-- 2GB RAM
-- 50MB free storage
-- Active internet connection
-- Phone number for authentication
-
-## Project Structure
-
-```
-app/
-├── src/
-│   ├── main/
-│   │   ├── java/com/hikigai/koichat/
-│   │   │   ├── adapters/           # RecyclerView adapters
-│   │   │   ├── data/              # Data models
-│   │   │   ├── network/           # Network related classes
-│   │   │   └── [Activities].kt    # Activity classes
-│   │   └── res/
-│   │       ├── layout/            # XML layouts
-│   │       ├── drawable/          # Images and shapes
-│   │       └── values/            # Resources
-│   └── test/                      # Unit tests
-└── build.gradle                   # App level build file
-```
-
-## Security Features
-
-- Phone number verification using Firebase Authentication
-- Secure data storage with Firebase Firestore
+- AI-powered chat assistance
+- Mental health support
+- Medical consultation
+- Secure user authentication
+- Real-time chat functionality
+- Multi-language support
 - Runtime permissions handling
 - Encrypted network communications
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Contact
 
-Your Name - [@yourusername]
-Project Link: [https://github.com/yourusername/HikigaiKoiChat](https://github.com/yourusername/HikigaiKoiChat)
+Your Name - [Vaishnavi2306] Project Link: https://github.com/Vaishnavi2306/HikigaiKoiChat
 
 ## Acknowledgments
 
-- Firebase Authentication and Firestore for backend services
-- [WormDotsIndicator](https://github.com/tommybuonomo/dotsindicator) for ViewPager2 indicators
-- Material Design components for UI elements 
+### 3. Real-Time Messaging
+- **Chat Functionality**: Real-time messaging system using Koi Chat API.
+- **Message History**: Efficient handling and display of past chat messages.
+
+## Getting Started
+
+Follow these steps to set up the project on your local machine.
+
+### Prerequisites
+- Android Studio
+- Firebase Project (for authentication and storage)
+- Kotlin or Java (based on your project setup)
+
+### Installation
+
+1. **Clone the Repository:**
+git clone https://github.com/Vaishnavi2306/HikigaiKoiChat
+
+
+2. **Open the Project in Android Studio:**
+- Open the `HikigaiKoiChat` folder in Android Studio.
+
+3. **Set Up Firebase:**
+- Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
+- Enable Firebase Authentication (Email/Password & Google Sign-In).
+- Download `google-services.json` and place it in the `app/` directory.
+
+4. **Install Dependencies:**
+- Ensure that all dependencies are added by syncing the project with Gradle files.
+- Run the following command to fetch the necessary dependencies:
+  ```
+  ./gradlew build
+  ```
+
+### Firebase Authentication
+
+1. **Firebase Authentication Setup**:  
+- Firebase Authentication is used to handle user sign-up and login securely.  
+- Supports email/password authentication and Google sign-in for convenience.
+
+2. **Error Handling**:  
+- Handles various authentication error scenarios (e.g., incorrect email/password, network issues).
+
+3. **Session Management**:  
+- Uses Firebase's persistent session management for automatic re-authentication.
+
+### Profile Management
+
+- Users can update their profiles (name, email, profile picture).
+- The profile information is stored securely and can be updated in real-time.
+
+### Koi Chat API Integration
+
+1. **Real-Time Messaging**:  
+- The app integrates with Koi Chat API to provide real-time chat between healthcare professionals.
+- Supports both text messages and media sharing (images, videos).
+
+2. **Message History**:  
+- Chat history is stored locally and can be synced with the server when the network is available.
+
+### Optimizations
+
+- **Firebase Caching**:  
+The app uses Firebase's offline capabilities to cache user data for faster access, even when the network is unavailable.
+
+- **Image Compression**:  
+Profile pictures and media are compressed before upload to reduce bandwidth usage.
+
+## Usage
+
+1. **Sign Up / Login**:  
+- Users can sign up with their email/password or via Google Sign-In. Upon successful authentication, they can access the main features of the app.
+
+2. **Profile Management**:  
+- Users can view and edit their profiles. Profile pictures are uploaded and stored in Firebase Storage.
+
+3. **Chat**:  
+- Users can communicate in real-time with other healthcare professionals through the integrated chat functionality. Chat messages can include images, videos, and text.
+
+
