@@ -1,15 +1,17 @@
-# HikigaiKoiChat
+# Hikigai Koi Chat
 
 An innovative healthcare chat application powered by AI, focusing on mental health support and medical assistance.
+
+## ⚠️ Disclaimer
+
+This is a playground for Doctors to test out our AI engine capabilities. This should not be used for diagnosis. If you are not a medical professional, please talk to your doctor for any diagnosis. If you are a doctor, please do not use this free app for consulting with patients and use your knowledge and discretion instead.
 
 ## Features
 
 - AI-powered chat assistance
-- Mental health support
 - Medical consultation
 - Secure user authentication
 - Real-time chat functionality
-- Multi-language support
 - Runtime permissions handling
 - Encrypted network communications
 
@@ -18,7 +20,10 @@ An innovative healthcare chat application powered by AI, focusing on mental heal
 
 Your Name - [Vaishnavi2306] Project Link: https://github.com/Vaishnavi2306/HikigaiKoiChat
 
-## Acknowledgments
+### 2. User Authentication and Profile Management
+- Secure user authentication using Firebase Authentication.
+- User profile management to view and update personal information.
+- Profile details are stored and managed securely.
 
 ### 3. Real-Time Messaging
 - **Chat Functionality**: Real-time messaging system using Koi Chat API.
@@ -77,26 +82,23 @@ git clone https://github.com/Vaishnavi2306/HikigaiKoiChat
 - The app integrates with Koi Chat API to provide real-time chat between healthcare professionals.
 - Supports both text messages and media sharing (images, videos).
 
-2. **Message History**:  
-- Chat history is stored locally and can be synced with the server when the network is available.
 
 ### Optimizations
 
 - **Firebase Caching**:  
 The app uses Firebase's offline capabilities to cache user data for faster access, even when the network is unavailable.
 
-- **Image Compression**:  
-Profile pictures and media are compressed before upload to reduce bandwidth usage.
+
 
 ## Usage
 
 1. **Sign Up / Login**:  
-- Users can sign up with their email/password or via Google Sign-In. Upon successful authentication, they can access the main features of the app.
+- Users can sign up with their Mobile number. Upon successful authentication, they can access the main features of the app.
 
 2. **Profile Management**:  
-- Users can view and edit their profiles. Profile pictures are uploaded and stored in Firebase Storage.
+- Users can view and edit their profiles.
 
 3. **Chat**:  
-- Users can communicate in real-time with other healthcare professionals through the integrated chat functionality. Chat messages can include images, videos, and text.
+- Users can communicate in real-time with other AI  through the integrated chat functionality. 
 
 
