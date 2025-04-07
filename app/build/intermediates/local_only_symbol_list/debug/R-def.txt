@@ -92,7 +92,6 @@ id backButton
 id bottomSection
 id callTeamButton
 id cancelButton
-id closeButton
 id countrySpinner
 id descriptionText
 id diagnosisContainer
@@ -146,7 +145,6 @@ id specialityInput
 id specialtyEditText
 id specialtyInputCard
 id subtitleText
-id tabLayout
 id titleText
 id topBar
 id userQueryText
@@ -154,7 +152,6 @@ id verifyOtpButton
 id viewPager
 id welcomeText
 layout activity_home
-layout activity_info
 layout activity_login
 layout activity_otp
 layout activity_profile

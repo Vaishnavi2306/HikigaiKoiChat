@@ -119,7 +119,7 @@ class LoginActivity : AppCompatActivity() {
             "$countryCode$rawPhoneNumber" // Add selected country code
         }
         
-        Log.d(TAG, "Checking phone number: $phoneNumber")
+        Log.d(TAG, "Attempting login with phone number: $phoneNumber")
         
         // Basic validation for phone number length
         if (!rawPhoneNumber.startsWith("+") && rawPhoneNumber.length < 10) {
@@ -127,40 +127,28 @@ class LoginActivity : AppCompatActivity() {
             return
         }
         
-        // Check for numeric value in the raw phone number (excluding the + if present)
-        val digitsOnly = if (rawPhoneNumber.startsWith("+")) {
-            rawPhoneNumber.substring(1)
-        } else {
-            rawPhoneNumber
-        }
-        
-        if (!digitsOnly.all { it.isDigit() }) {
-            phoneNumberEditText.error = "Phone number should contain only digits"
-            return
-        }
-
-        // Check for network connectivity
-        if (!isNetworkAvailable()) {
-            Toast.makeText(this, "No internet connection. Please check your network.", Toast.LENGTH_SHORT).show()
-            return
-        }
-
         // Show loading state immediately
         val progressBar = findViewById<ProgressBar>(R.id.progressBar)
         progressBar.visibility = View.VISIBLE
         sendOtpButton.isEnabled = false
 
         // Query Firestore to check if user exists
+        Log.d(TAG, "Checking if user exists in Firestore")
         db.collection("users")
             .whereEqualTo("phoneNumber", phoneNumber)
             .get()
             .addOnSuccessListener { documents ->
                 if (documents.isEmpty) {
+                    Log.d(TAG, "User not found in Firestore")
                     progressBar.visibility = View.GONE
                     sendOtpButton.isEnabled = true
                     Toast.makeText(this, "Account not found. Please sign up first.", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, SignupActivity::class.java))
+                    // Pass the phone number to SignupActivity
+                    val intent = Intent(this, SignupActivity::class.java)
+                    intent.putExtra("phoneNumber", phoneNumber)
+                    startActivity(intent)
                 } else {
+                    Log.d(TAG, "User found in Firestore, starting phone verification")
                     startPhoneNumberVerification(phoneNumber)
                 }
             }
@@ -193,60 +181,35 @@ class LoginActivity : AppCompatActivity() {
 
     private fun startPhoneNumberVerification(phoneNumber: String) {
         Log.d(TAG, "Starting phone verification for: $phoneNumber")
-        
-        // Show loading state
         val progressBar = findViewById<ProgressBar>(R.id.progressBar)
-        progressBar.visibility = View.VISIBLE
-        sendOtpButton.isEnabled = false
-        Toast.makeText(this, "Sending verification code...", Toast.LENGTH_SHORT).show()
-
-        // Add timeout handler
-        val timeoutHandler = Handler(mainLooper)
-        val timeoutRunnable = Runnable {
-            if (progressBar.visibility == View.VISIBLE) {
-                progressBar.visibility = View.GONE
-                sendOtpButton.isEnabled = true
-                Toast.makeText(this, "Verification request timed out. Please try again.", Toast.LENGTH_LONG).show()
-                Log.e(TAG, "Phone verification timed out after 30 seconds")
-            }
-        }
-        timeoutHandler.postDelayed(timeoutRunnable, 30000) // 30 seconds timeout
         
         val callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                Log.d(TAG, "onVerificationCompleted: $credential")
-                timeoutHandler.removeCallbacks(timeoutRunnable)
+                Log.d(TAG, "onVerificationCompleted: Auto-verification successful")
                 progressBar.visibility = View.GONE
+                sendOtpButton.isEnabled = true
                 signInWithPhoneAuthCredential(credential)
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
-                Log.e(TAG, "onVerificationFailed: ${e.message}", e)
-                timeoutHandler.removeCallbacks(timeoutRunnable)
+                Log.e(TAG, "onVerificationFailed: ${e.message}")
                 progressBar.visibility = View.GONE
                 sendOtpButton.isEnabled = true
-
+                
                 val errorMessage = when (e) {
-                    is FirebaseAuthInvalidCredentialsException -> {
-                        "Invalid phone number format. Please check the country code and number."
-                    }
-                    is FirebaseTooManyRequestsException -> {
-                        "Too many verification attempts. Please try again later."
-                    }
-                    else -> {
-                        "Verification failed: ${e.message}"
-                    }
+                    is FirebaseAuthInvalidCredentialsException -> "Invalid phone number format."
+                    is FirebaseTooManyRequestsException -> "Too many requests. Please try again later."
+                    else -> "Verification failed: ${e.message}"
                 }
                 Toast.makeText(this@LoginActivity, errorMessage, Toast.LENGTH_LONG).show()
             }
 
             override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {
-                Log.d(TAG, "onCodeSent: $verificationId")
-                timeoutHandler.removeCallbacks(timeoutRunnable)
+                Log.d(TAG, "OTP code sent successfully")
                 progressBar.visibility = View.GONE
                 sendOtpButton.isEnabled = true
 
-                // Navigate to OTP screen
+                // Navigate to OTP screen with proper extras
                 val intent = Intent(this@LoginActivity, OtpActivity::class.java).apply {
                     putExtra("verificationId", verificationId)
                     putExtra("phoneNumber", phoneNumber)
@@ -258,26 +221,17 @@ class LoginActivity : AppCompatActivity() {
         }
 
         try {
-            // Validate phone number format before sending
-            if (!isValidPhoneNumber(phoneNumber, countrySpinner.selectedItem.toString())) {
-                progressBar.visibility = View.GONE
-                sendOtpButton.isEnabled = true
-                Toast.makeText(this, "Invalid phone number format for selected country", Toast.LENGTH_LONG).show()
-                return
-            }
-
             val options = PhoneAuthOptions.newBuilder(auth)
                 .setPhoneNumber(phoneNumber)
-                .setTimeout(30L, TimeUnit.SECONDS)
+                .setTimeout(60L, TimeUnit.SECONDS)
                 .setActivity(this)
                 .setCallbacks(callbacks)
                 .build()
 
             PhoneAuthProvider.verifyPhoneNumber(options)
-            Log.d(TAG, "Phone verification initiated successfully")
+            Log.d(TAG, "Phone verification initiated")
         } catch (e: Exception) {
             Log.e(TAG, "Error starting phone verification: ${e.message}", e)
-            timeoutHandler.removeCallbacks(timeoutRunnable)
             progressBar.visibility = View.GONE
             sendOtpButton.isEnabled = true
             Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_LONG).show()

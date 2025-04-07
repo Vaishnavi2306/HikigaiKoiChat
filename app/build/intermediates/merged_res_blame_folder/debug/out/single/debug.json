@@ -92,10 +92,6 @@
         "source": "com.hikigai.koichat.app-main-44:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.hikigai.koichat.app-merged_res-42:/layout_activity_info.xml.flat",
-        "source": "com.hikigai.koichat.app-main-44:/layout/activity_info.xml"
-    },
-    {
         "merged": "com.hikigai.koichat.app-merged_res-42:/drawable_ic_close.xml.flat",
         "source": "com.hikigai.koichat.app-main-44:/drawable/ic_close.xml"
     },

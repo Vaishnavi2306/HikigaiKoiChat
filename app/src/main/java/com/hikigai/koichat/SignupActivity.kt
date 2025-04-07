@@ -262,8 +262,8 @@ class SignupActivity : AppCompatActivity() {
                         // Navigate to OTP screen with verification ID
                         val intent = Intent(this@SignupActivity, OtpActivity::class.java)
                         intent.putExtra("phoneNumber", phoneNumber)
-                        intent.putExtra("IS_NEW_USER", true)
-                        intent.putExtra("VERIFICATION_ID", verificationId)
+                        intent.putExtra("isNewUser", true)
+                        intent.putExtra("verificationId", verificationId)
                         startActivity(intent)
                         finish()
                     }

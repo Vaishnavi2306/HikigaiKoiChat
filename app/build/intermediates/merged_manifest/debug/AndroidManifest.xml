@@ -64,7 +64,7 @@
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.HikigaiKoiChat.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.hikigai.koichat.OtpActivity"
             android:exported="false"
@@ -80,12 +80,6 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.hikigai.koichat.ProfileActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.HikigaiKoiChat.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name="com.hikigai.koichat.InfoActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.HikigaiKoiChat.NoActionBar"

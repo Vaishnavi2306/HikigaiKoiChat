@@ -1,6 +1,8 @@
 # Hikigai Koi Chat
 
-An innovative healthcare chat application powered by AI, focusing on mental health support and medical assistance.
+A sophisticated AI-powered healthcare platform designed to assist medical professionals in providing better patient 
+care. The application leverages advanced AI technology to enhance diagnosis, streamline workflows, and improve 
+healthcare outcomes
 
 ## ⚠️ Disclaimer
 

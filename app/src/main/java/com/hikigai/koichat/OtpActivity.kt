@@ -19,6 +19,7 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FieldValue
 import java.util.concurrent.TimeUnit
 
 private const val TAG = "OtpActivity"
@@ -48,13 +49,14 @@ class OtpActivity : AppCompatActivity() {
         isNewUser = intent.getBooleanExtra("isNewUser", false)
         verificationId = intent.getStringExtra("verificationId")
         
+        Log.d(TAG, "OTP Activity started - Phone: $phoneNumber, isNewUser: $isNewUser")
+        
         if (phoneNumber.isEmpty() || verificationId == null) {
+            Log.e(TAG, "Missing required data - Phone: $phoneNumber, verificationId: $verificationId")
             Toast.makeText(this, "Invalid verification data", Toast.LENGTH_SHORT).show()
             finishAndGoBack()
             return
         }
-        
-        Log.d(TAG, "OTP Activity started for number: $phoneNumber, isNewUser: $isNewUser, verificationId: ${verificationId?.take(6)}...")
         
         initializeViews()
         setupOtpInputs()
@@ -112,12 +114,7 @@ class OtpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val otp = otpDigits.joinToString("") { it.text.toString() }
-            if (otp.length == 6 && verificationId != null) {
-                verifyPhoneNumberWithCode(verificationId!!, otp)
-            } else {
-                Toast.makeText(this, "Please enter complete OTP", Toast.LENGTH_SHORT).show()
-            }
+            verifyOtpCode()
         }
 
         resendOtpButton.setOnClickListener {
@@ -249,32 +246,36 @@ class OtpActivity : AppCompatActivity() {
         countDownTimer.start()
     }
     
-    private fun verifyPhoneNumberWithCode(verificationId: String, code: String) {
-        if (isProcessing || navigationStarted) {
+    private fun verifyOtpCode() {
+        if (isProcessing) {
+            Log.d(TAG, "Verification already in progress")
             return
         }
         
-        if (code.length != 6) {
-            Toast.makeText(this, "Please enter a valid 6-digit OTP", Toast.LENGTH_SHORT).show()
+        val otpCode = getOtpFromInputs()
+        if (otpCode.length != 6) {
+            Toast.makeText(this, "Please enter complete OTP", Toast.LENGTH_SHORT).show()
             return
         }
         
+        Log.d(TAG, "Verifying OTP code for phone: $phoneNumber")
         isProcessing = true
         verifyOtpButton.isEnabled = false
-        
-        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
-        progressBar.visibility = View.VISIBLE
+        findViewById<ProgressBar>(R.id.progressBar).visibility = View.VISIBLE
         
         try {
-            Log.d(TAG, "Verifying with code: $code, verificationId: ${verificationId.take(6)}...")
-            val credential = PhoneAuthProvider.getCredential(verificationId, code)
+            val credential = PhoneAuthProvider.getCredential(verificationId!!, otpCode)
             signInWithPhoneAuthCredential(credential)
         } catch (e: Exception) {
-            Log.e(TAG, "Verification error: ${e.message}", e)
-            Toast.makeText(this, "Verification error: ${e.message}", Toast.LENGTH_SHORT).show()
+            Log.e(TAG, "Error creating credential: ${e.message}")
             resetProcessingState()
-            progressBar.visibility = View.GONE
+            Toast.makeText(this, "Verification failed: ${e.message}", Toast.LENGTH_SHORT).show()
+            findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
         }
+    }
+
+    private fun getOtpFromInputs(): String {
+        return otpDigits.joinToString("") { it.text.toString() }
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
@@ -285,26 +286,28 @@ class OtpActivity : AppCompatActivity() {
                         Log.d(TAG, "Sign in successful")
                         val user = task.result?.user
                         if (user != null) {
-                            navigateToHome(user.uid)
+                            if (isNewUser) {
+                                createUserInFirestore(user.uid)
+                            } else {
+                                navigateToHome(user.uid)
+                            }
                         } else {
                             Log.e(TAG, "User is null after successful sign in")
                             resetProcessingState()
-                            findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
                             Toast.makeText(this, "Authentication failed: User is null", Toast.LENGTH_SHORT).show()
+                            findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
                         }
                     } else {
                         Log.e(TAG, "Sign in failed: ${task.exception?.message}")
                         resetProcessingState()
                         findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
                         
-                        when {
-                            task.exception?.message?.contains("invalid verification code", ignoreCase = true) == true -> {
-                                Toast.makeText(this, "Invalid verification code. Please try again.", Toast.LENGTH_SHORT).show()
-                            }
-                            else -> {
-                                Toast.makeText(this, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                            }
+                        val errorMessage = when {
+                            task.exception?.message?.contains("invalid verification code", ignoreCase = true) == true -> 
+                                "Invalid verification code. Please try again."
+                            else -> "Authentication failed: ${task.exception?.message}"
                         }
+                        Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
                     }
                 }
         } catch (e: Exception) {
@@ -316,40 +319,30 @@ class OtpActivity : AppCompatActivity() {
     }
     
     private fun createUserInFirestore(userId: String) {
-        Log.d(TAG, "Creating user in Firestore with ID: $userId")
+        Log.d(TAG, "Creating new user in Firestore")
+        val sharedPrefs = getSharedPreferences("UserData", MODE_PRIVATE)
         
-        try {
-            // Get user data from shared preferences
-            val sharedPrefs = getSharedPreferences("UserData", MODE_PRIVATE)
-            val userData = hashMapOf(
-                "name" to (sharedPrefs.getString("name", "") ?: ""),
-                "email" to (sharedPrefs.getString("email", "") ?: ""),
-                "phoneNumber" to phoneNumber,
-                "specialty" to (sharedPrefs.getString("specialty", "") ?: ""),
-                "createdAt" to com.google.firebase.Timestamp.now()
-            )
-            
-            // Create user document with the Firebase Auth user ID
-            db.collection("users")
-                .document(userId)
-                .set(userData)
-                .addOnSuccessListener {
-                    Log.d(TAG, "User created successfully in Firestore")
-                    Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
-                    navigateToHome(userId)
-                }
-                .addOnFailureListener { e ->
-                    Log.e(TAG, "Failed to create user: ${e.message}")
-                    Toast.makeText(this, "Account verified but data upload failed. Please update your profile.", Toast.LENGTH_LONG).show()
-                    // Still navigate to home, user can update profile later
-                    navigateToHome(userId)
-                }
-        } catch (e: Exception) {
-            Log.e(TAG, "Error creating user: ${e.message}")
-            Toast.makeText(this, "Error creating account: ${e.message}", Toast.LENGTH_SHORT).show()
-            // Still navigate to home, user can update profile later
-            navigateToHome(userId)
-        }
+        val userData = hashMapOf(
+            "name" to sharedPrefs.getString("name", ""),
+            "email" to sharedPrefs.getString("email", ""),
+            "phoneNumber" to phoneNumber,
+            "specialty" to sharedPrefs.getString("specialty", ""),
+            "createdAt" to FieldValue.serverTimestamp()
+        )
+        
+        db.collection("users")
+            .document(userId)
+            .set(userData)
+            .addOnSuccessListener {
+                Log.d(TAG, "User created successfully in Firestore")
+                navigateToHome(userId)
+            }
+            .addOnFailureListener { e ->
+                Log.e(TAG, "Error creating user: ${e.message}")
+                resetProcessingState()
+                Toast.makeText(this, "Failed to create user profile", Toast.LENGTH_SHORT).show()
+                findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
+            }
     }
 
     private fun navigateToHome(userId: String) {

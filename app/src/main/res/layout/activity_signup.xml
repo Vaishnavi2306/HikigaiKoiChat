@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/screen_background_gradient"
         android:padding="24dp"
+        android:paddingBottom="32dp"
+        android:fitsSystemWindows="true"
         tools:context="com.hikigai.koichat.SignupActivity">
 
         <TextView
@@ -121,6 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="0dp"
             app:strokeColor="#E0E0E0"
@@ -156,6 +160,7 @@
                     android:background="@null"
                     android:hint="Enter mobile number"
                     android:inputType="phone"
+                    android:maxLength="10"
                     android:textColor="#1C1B1F"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -166,11 +171,13 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
             android:text="SIGN UP"
             android:textSize="16sp"
             app:cornerRadius="12dp"
             android:backgroundTint="#2196F3"
-            app:layout_constraintTop_toBottomOf="@id/phoneInputCard" />
+            app:layout_constraintTop_toBottomOf="@id/phoneInputCard"
+            app:layout_constraintBottom_toTopOf="@id/progressBar" />
 
         <ProgressBar
             android:id="@+id/progressBar"

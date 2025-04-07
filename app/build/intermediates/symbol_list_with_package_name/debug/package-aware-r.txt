@@ -3354,7 +3354,6 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id clockwise
-id closeButton
 id closest
 id collapseActionView
 id compress
@@ -3721,7 +3720,6 @@ id submenuarrow
 id submit_area
 id subtitleText
 id supportScrollUp
-id tabLayout
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3915,7 +3913,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_home
-layout activity_info
 layout activity_login
 layout activity_otp
 layout activity_profile

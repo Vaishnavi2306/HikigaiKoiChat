@@ -45,7 +45,7 @@
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.HikigaiKoiChat.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
 
         <activity
             android:name=".OtpActivity"
